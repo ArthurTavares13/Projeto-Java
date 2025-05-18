@@ -1,0 +1,438 @@
+/* Reset geral */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f9f9f9;
+  color: #000000;
+  line-height: 1.6;
+}
+
+/* Paleta de Cores - Insite 21 */
+:root {
+  --primaria: #FFD600;
+  --gradiente-inicio: #FFEA00;
+  --gradiente-fim: #FFC107;
+  --texto: #000000;
+  --branco: #ffffff;
+}
+
+/* Navbar */
+.navbar {
+  background: var(--primaria);
+  color: var(--texto);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-links a {
+  color: var(--texto);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #333;
+}
+
+/* Hero */
+.hero {
+  background: linear-gradient(to right, var(--gradiente-inicio), var(--gradiente-fim));
+  color: var(--texto);
+  text-align: center;
+  padding: 6rem 2rem;
+}
+
+.hero h1 {
+  font-size: 2.8rem;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.btn {
+  background: var(--branco);
+  color: var(--texto);
+  padding: 0.75rem 1.5rem;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+.btn:hover {
+  background: #f5f5f5;
+}
+
+/* Seções padrão */
+section {
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+/* Sobre, Contato */
+.sobre, .contato {
+  background: var(--branco);
+}
+
+/* Serviços, Portfólio, Depoimentos */
+.servicos, .portfolio, .depoimentos {
+  background: #f3f4f6;
+}
+
+/* Cards */
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.card {
+  background: var(--branco);
+  padding: 2rem;
+  border-radius: 12px;
+  max-width: 300px;
+  flex: 1;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 0 10px rgba(0,0,0,0.05);
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.card h3 {
+  color: var(--primaria);
+  margin-bottom: 1rem;
+}
+
+.card h4 {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+/* Portfólio */
+/* Estilo para a nova seção chamativa para produtos */
+.portfolio {
+  background: #f3f4f6;
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.portfolio h2 {
+  font-size: 2.5rem;
+  color: black;
+  margin-bottom: 1rem;
+}
+
+.portfolio p {
+  font-size: 1.2rem;
+  color: #555;
+  margin-bottom: 2rem;
+}
+
+.btn-produtos {
+  background-color: var(--primaria);
+  color: white;
+  padding: 15px 25px;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.btn-produtos:hover {
+  background-color: #e6c200;
+}
+
+
+/* Formulário de contato */
+form {
+  max-width: 500px;
+  margin: 2rem auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+input, textarea {
+  padding: 1rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+
+button {
+  background: var(--primaria);
+  color: var(--texto);
+  padding: 0.75rem;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background: #b39802;
+}
+
+/* Informações de contato */
+.info-contato {
+  margin-top: 2rem;
+  font-size: 0.95rem;
+  color: #333;
+  line-height: 1.8;
+}
+
+/* Footer */
+footer {
+  background: var(--texto);
+  color: var(--branco);
+  text-align: center;
+  padding: 2rem;
+  margin-top: 4rem;
+}
+
+.redes-sociais a {
+  color: var(--primaria);
+  margin: 0 0.5rem;
+  text-decoration: none;
+  font-size: 0.95rem;
+}
+
+.redes-sociais a:hover {
+  text-decoration: underline;
+}
+
+/* Animações */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 1.2s ease-out;
+}
+
+.animate-up {
+  animation: fade-in 1.5s ease-out;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .cards {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+}
+
+#topo {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: var(--primaria);
+  color: var(--texto);
+  border: none;
+  padding: 10px 15px;
+  border-radius: 50%;
+  font-size: 18px;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  display: none;
+  z-index: 1000;
+}
+
+#menu-segmentos {
+  position: fixed;
+  top: 0;
+  left: -260px;
+  width: 240px;
+  height: 100%;
+  background-color: #fff;
+  border-right: 2px solid #FFD700;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+  padding: 2rem 1rem;
+  transition: left 0.3s ease;
+  z-index: 1000;
+}
+
+#menu-segmentos h3 {
+  color: #111;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+#menu-segmentos ul {
+  list-style: none;
+  padding: 0;
+}
+
+#menu-segmentos ul li {
+  margin-bottom: 1rem;
+}
+
+#menu-segmentos ul li a {
+  color: #111;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+#menu-segmentos ul li a:hover {
+  color: #FFD700;
+}
+
+.sobre {
+  background-color: #fdfdf5;
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.sobre h2 {
+  color: black;
+  font-size: 2.2rem;
+  margin-bottom: 1rem;
+}
+
+.sobre p {
+  max-width: 800px;
+  margin: 0 auto 1.5rem;
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #333;
+}
+
+.sobre .icon-item img {
+  width: 50px;  /* Ajuste para o tamanho desejado */
+  height: 50px; /* Para manter a proporção */
+  object-fit: contain; /* Para garantir que a imagem fique proporcional */
+  margin-bottom: 10px;
+}
+
+/* Seção de Produtos em Promoção (Menor e Compacta) */
+.produtos-promocao {
+  padding: 40px 20px;
+  text-align: center;
+  background-color: #f5f5f5;
+}
+
+.promo-cards {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.promo-cards .card {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  padding: 20px;
+  max-width: 250px;
+  text-align: center;
+  margin: 10px;
+}
+
+.promo-cards .card img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.promo-cards .card h4 {
+  font-size: 1.1rem;
+  color: #FF6F00;
+  margin-bottom: 15px;
+}
+
+.promo-cards .card h4 span {
+  text-decoration: line-through;
+  color: #999;
+}
+
+.promo-cards .card .btn {
+  background-color: #FFD600;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+.promo-cards .card .btn:hover {
+  background-color: #e6c200;
+}
+
+/* Seção Sobre com Ícones */
+.sobre .sobre-qualidades {
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+}
+
+.sobre .sobre-qualidades .qualidade {
+  text-align: center;
+}
+
+.sobre .sobre-qualidades .qualidade img {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+  margin-bottom: 10px;
+}
+
+.sobre .sobre-qualidades .qualidade p {
+  font-weight: bold;
+}
