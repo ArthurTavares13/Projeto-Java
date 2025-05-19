@@ -1,0 +1,5 @@
+com\seuprojeto\model\Produto.class
+com\seuprojeto\repository\ProdutoRepository.class
+com\seuprojeto\Main.class
+com\seuprojeto\service\ProdutoService.class
+com\seuprojeto\controller\ProdutoController.class

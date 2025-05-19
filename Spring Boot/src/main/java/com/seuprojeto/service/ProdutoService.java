@@ -1,16 +1,25 @@
 package com.seuprojeto.service;
 
 import com.seuprojeto.model.Produto;
+import com.seuprojeto.repository.ProdutoRepository;
+import org.springframework.stereotype.Service;
+
 import java.util.ArrayList;
 import java.util.List;
-
+@Service
 public class ProdutoService {
 
-    public List<Produto> listarProdutos() {
-        // Exemplo de lista de produtos
-        List<Produto> produtos = new ArrayList<>();
-        produtos.add(new Produto(1L, "Produto 1", 29.99));
-        produtos.add(new Produto(2L, "Produto 2", 49.99));
-        return produtos;
+    private final ProdutoRepository produtoRepository;
+
+    public ProdutoService(ProdutoRepository produtoRepository) {
+        this.produtoRepository = produtoRepository;
+    }
+
+    public Produto create(Produto produto) {
+        return produtoRepository.save(produto);
+    }
+
+    public List<Produto> findAll() {
+        return produtoRepository.findAll();
     }
 }

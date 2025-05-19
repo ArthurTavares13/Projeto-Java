@@ -1,38 +1,21 @@
 package com.seuprojeto.model;
 
+import jakarta.persistence.*;
+import lombok.*;
+
+@Entity
+@Table(name = "produto")
+@AllArgsConstructor
+@NoArgsConstructor
+@Data
 public class Produto {
+    @Id @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
+
+    @Column(nullable = false)
     private String nome;
-    private Double preco;
 
-    // Construtor, Getters e Setters
-    public Produto(Long id, String nome, Double preco) {
-        this.id = id;
-        this.nome = nome;
-        this.preco = preco;
-    }
+    @Column(nullable = false)
+    private Double valor;
 
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getNome() {
-        return nome;
-    }
-
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
-
-    public Double getPreco() {
-        return preco;
-    }
-
-    public void setPreco(Double preco) {
-        this.preco = preco;
-    }
 }

@@ -1,11 +1,10 @@
 package com.seuprojeto.repository;
 
 import com.seuprojeto.model.Produto;
-import java.util.List;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
-public class ProdutoRepository {
-    public List<Produto> findAll() {
-        // Simulação de dados do banco
-        return List.of(new Produto(1L, "Produto 1", 29.99), new Produto(2L, "Produto 2", 49.99));
-    }
+@Repository
+public interface ProdutoRepository extends JpaRepository<Produto, Long> {
+
 }
